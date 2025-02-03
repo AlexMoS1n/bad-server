@@ -305,7 +305,7 @@ export const createOrder = async (
             req.body
 
             if (phone && !validator.isMobilePhone(phone)) {
-                throw new BadRequestError('Не правильно введенный номер телефона')
+                throw new BadRequestError('Некорректный номер телефона')
             }
 
         items.forEach((id: Types.ObjectId) => {
