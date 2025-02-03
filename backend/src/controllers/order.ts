@@ -33,21 +33,6 @@ export const getOrders = async (
         const acceptableLimit = Math.min(Number(limit), 10).toString()
         const acceptablePage = Math.max(Number(page), 1)
 
-        	
-        if (status) {
-            if (typeof status === 'string' && /^[a-zA-Z0-9_-]+$/.test(status)) {
-                filters.status = status;
-            } else {
-                throw new BadRequestError('Передан невалидный параметр статуса');
-            }
-        }
-        
-        if (search) {
-            if (/[^\w\s]/.test(search as string)) {
-                throw new BadRequestError('Передан невалидный поисковый запрос');
-            }
-        }
-
         if (status) {
             if (typeof status === 'object') {
                 Object.assign(filters, status)
