@@ -8,6 +8,7 @@ export const ACCESS_TOKEN = {
     secret: process.env.AUTH_ACCESS_TOKEN_SECRET || 'secret-dev',
     expiry: process.env.AUTH_ACCESS_TOKEN_EXPIRY || '10m',
 }
+
 export const REFRESH_TOKEN = {
     secret: process.env.AUTH_REFRESH_TOKEN_SECRET || 'secret-dev',
     expiry: process.env.AUTH_REFRESH_TOKEN_EXPIRY || '7d',
@@ -22,3 +23,6 @@ export const REFRESH_TOKEN = {
         } as CookieOptions,
     },
 }
+
+export const CSRF_SECRET = 'csrfSecret'
+export const CSRF_COOKIE_NAME = 'host-csrf-Token'
